@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: micro1:v3
+    container_name: web-app.local
+    ports:
+      - 80:80
+    restart: always
+    networks:
+      - web
+
+networks:
+  web:
